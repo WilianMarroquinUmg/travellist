@@ -26,3 +26,5 @@ Route::resource('clientes', App\Http\Controllers\ClienteController::class);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
+
+Route::resource('tipo-Cuentas', App\Http\Controllers\TipoCuentaController::class);
