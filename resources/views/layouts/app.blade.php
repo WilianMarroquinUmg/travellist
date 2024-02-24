@@ -1,5 +1,10 @@
 <x-laravel-ui-adminlte::adminlte-layout>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+
     <body class="hold-transition sidebar-mini layout-fixed">
         <div class="wrapper">
             <!-- Main Header -->
@@ -63,4 +68,5 @@
             </footer>
         </div>
     </body>
+    @stack('scripts')
 </x-laravel-ui-adminlte::adminlte-layout>

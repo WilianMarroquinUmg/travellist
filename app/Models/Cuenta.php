@@ -22,8 +22,10 @@ class Cuenta extends Model
         'Saldo' => 'float',
         'Fecha_Apertura' => 'date',
         'Estado' => 'string',
-        'no_cuenta' => 'string'
+        'no_cuenta' => 'string',
+        'NombreConEspacio' => 'string'
     ];
+    protected $appends = ['nombreConEspacio'];
 
     public static array $rules = [
         'Id_Cliente' => 'required',
@@ -57,4 +59,10 @@ class Cuenta extends Model
     {
         return $this->hasMany(\App\Models\Movimiento::class, 'Id_Cuenta');
     }
+
+    public function getNombreConEspacioAttribute()
+    {
+        return $this->no_cuenta . ' - ' . $this->idCliente->Nombre . ' ' . $this->idCliente->Apellido;
+    }
+
 }

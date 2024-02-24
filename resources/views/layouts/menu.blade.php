@@ -47,3 +47,10 @@
         <p>Movimientos</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('transacciones.index') }}" class="nav-link {{ Request::is('movimientos*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>Transacciones</p>
+    </a>
+</li>

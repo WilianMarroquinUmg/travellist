@@ -34,3 +34,5 @@ Route::resource('tipo-cuentas', App\Http\Controllers\TipoCuentaController::class
 Route::resource('tipo-monedas', App\Http\Controllers\TipoMonedaController::class);
 Route::resource('tipo-movimientos', App\Http\Controllers\TipoMovimientoController::class);
 Route::resource('movimientos', App\Http\Controllers\MovimientoController::class);
+
+Route::resource('transacciones', App\Http\Controllers\TransaccionesController::class);
