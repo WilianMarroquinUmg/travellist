@@ -19,7 +19,6 @@
 
         <div class="card">
 
-            {!! Form::open(['route' => 'clientes.store']) !!}
 
             <div class="card-body">
 
@@ -29,12 +28,8 @@
 
             </div>
 
-            <div class="card-footer">
-                {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                <a href="{{ route('clientes.index') }}" class="btn btn-default"> Cancel </a>
-            </div>
 
-            {!! Form::close() !!}
+
 
         </div>
     </div>

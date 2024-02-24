@@ -17,6 +17,7 @@ class Cliente extends Model
         'Estado',
         'dpi'
     ];
+    protected $appends = ['nombreYdpi'];
 
     protected $casts = [
         'Nombre' => 'string',
@@ -42,5 +43,11 @@ class Cliente extends Model
     public function cuenta(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(\App\Models\Cuentum::class, 'Id_Cliente');
+    }
+
+    public function getnombreYdpiattribute()
+    {
+        return $this->Nombre . ' - ' . $this->dpi;
+
     }
 }

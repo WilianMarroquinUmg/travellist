@@ -12,7 +12,7 @@ use Flash;
 
 class CuentaController extends AppBaseController
 {
-    /** @var CuentaRepository $cuentaRepository*/
+    /** @var CuentaRepository $cuentaRepository */
     private $cuentaRepository;
 
     public function __construct(CuentaRepository $cuentaRepo)
@@ -25,7 +25,7 @@ class CuentaController extends AppBaseController
      */
     public function index(CuentaDataTable $cuentaDataTable)
     {
-    return $cuentaDataTable->render('cuentas.index');
+        return $cuentaDataTable->render('cuentas.index');
     }
 
 
@@ -34,7 +34,10 @@ class CuentaController extends AppBaseController
      */
     public function create()
     {
-        return view('cuentas.create');
+        $tipo_cuentas = \App\Models\TipoCuenta::all();
+        $tipo_monedas = \App\Models\TipoMoneda::all();
+        $clientes = \App\Models\Cliente::all();
+        return view('cuentas.create', compact('tipo_cuentas', 'tipo_monedas', 'clientes'));
     }
 
     /**
@@ -44,11 +47,38 @@ class CuentaController extends AppBaseController
     {
         $input = $request->all();
 
-        $cuenta = $this->cuentaRepository->create($input);
+        $id_cliente = $request->Id_Cliente;
+        $saldo = $request->Saldo;
+        $fecha_apetura = $request->Fecha_Apertura;
+        $id_tipo_cuenta = $request->tipo_cuenta_id;
+        $estado = $request->Estado;
+        $id_tipo_moneda = $request->moneda_id;
+        $no_cuenta = $request->no_cuenta;
 
-        Flash::success('Cuenta saved successfully.');
+        try {
+            $respuesta = \DB::statement('EXEC crearCuenta ?, ?, ?, ?, ?, ?, ?', [
+                $id_cliente,
+                $saldo,
+                $fecha_apetura,
+                $id_tipo_cuenta,
+                $estado,
+                $id_tipo_moneda,
+                $no_cuenta
+            ]);
+            // Verificar si la transacción fue exitosa
+            if ($respuesta) {
+                Flash::success('Cuenta Creada.');
+                return redirect(route('cuentas.index'));
+            } else {
 
-        return redirect(route('cuentas.index'));
+                throw new \Exception('La transacción no se pudo completar correctamente.');
+            }
+        } catch (\Exception $e) {
+            Flash::error($e->getMessage());
+            $error = true;
+            $detalles = $e->getMessage();
+            return redirect(route('cuentas.create', compact('error', 'detalles')));
+        }
     }
 
     /**

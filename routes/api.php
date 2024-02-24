@@ -20,3 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('api/cuentas', 'App\Http\Controllers\TransaccionesController@prueba')->name('api.cuentas');
 Route::post('api/realizar/transaccion', 'App\Http\Controllers\TransaccionesController@realizarTransaccion')->name('api.realizar.transaccion');
+Route::post('api/realizar/guardarCuenta', 'App\Http\Controllers\TransaccionesController@GuardarCuenta')->name('api.GuardarCuenta');
+Route::post('api/realizar/guardarcliente', 'App\Http\Controllers\TransaccionesController@guardarCliente')->name('api.guardarCliente');

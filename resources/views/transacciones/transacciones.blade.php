@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <script src="https://unpkg.com/vue-multiselect@2.1.6"></script>
-    <link rel="stylesheet" href="https://unpkg.com/vue-multiselect@2.1.6/dist/vue-multiselect.min.css">
-
+  
     <div id="app">
 
         <div class="container">
@@ -57,6 +55,8 @@
 @push('scripts')
     <script>
 
+
+
         var app = new Vue({
             el: '#app',
             components: { Multiselect: window.VueMultiselect.default },
@@ -80,15 +80,32 @@
                         monto: this.monto
                     }
                     ;
-                    let url = @json(Route('api.realizar.transaccion'));
-                    const response = await axios.post(url, datos);
-
-                    alert(response.data.message);
-
-
+                
+                    try{
+                        let url = @json(Route('api.realizar.transaccion'));
+                        const response = await axios.post(url, datos);
+                            Swal.fire({
+                    title: "En Horabuena!",
+                    text: response.data.message,
+                    icon: "success"
+                }); 
+                    
+                }catch(e){
+                
+                    Swal.fire({
+                    title: "Error!",
+                    text: e.response.data.message,
+                    icon: "error"
+                });
+                
+                    }
+            
+    
                 }
             }
+    
         })
+
 
 
     </script>

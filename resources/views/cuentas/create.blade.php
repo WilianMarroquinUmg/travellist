@@ -19,7 +19,6 @@
 
         <div class="card">
 
-            {!! Form::open(['route' => 'cuentas.store']) !!}
 
             <div class="card-body">
 
@@ -34,7 +33,6 @@
                 <a href="{{ route('cuentas.index') }}" class="btn btn-default"> Cancel </a>
             </div>
 
-            {!! Form::close() !!}
 
         </div>
     </div>
