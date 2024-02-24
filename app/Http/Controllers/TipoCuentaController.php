@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\TipoCuentaDataTable;
 use App\Http\Requests\CreateTipoCuentaRequest;
 use App\Http\Requests\UpdateTipoCuentaRequest;
 use App\Http\Controllers\AppBaseController;
@@ -22,13 +23,11 @@ class TipoCuentaController extends AppBaseController
     /**
      * Display a listing of the TipoCuenta.
      */
-    public function index(Request $request)
+    public function index(TipoCuentaDataTable $tipoCuentaDataTable)
     {
-        $tipoCuentas = $this->tipoCuentaRepository->paginate(10);
-
-        return view('tipo_cuentas.index')
-            ->with('tipoCuentas', $tipoCuentas);
+    return $tipoCuentaDataTable->render('tipo_cuentas.index');
     }
+
 
     /**
      * Show the form for creating a new TipoCuenta.
@@ -49,7 +48,7 @@ class TipoCuentaController extends AppBaseController
 
         Flash::success('Tipo Cuenta saved successfully.');
 
-        return redirect(route('tipo_Cuentas.index'));
+        return redirect(route('tipoCuentas.index'));
     }
 
     /**

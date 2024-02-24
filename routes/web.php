@@ -28,3 +28,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::resource('tipo-Cuentas', App\Http\Controllers\TipoCuentaController::class);
+
+Route::resource('cuentas', App\Http\Controllers\CuentaController::class);
+Route::resource('tipo-cuentas', App\Http\Controllers\TipoCuentaController::class);
+Route::resource('tipo-monedas', App\Http\Controllers\TipoMonedaController::class);
+Route::resource('tipo-movimientos', App\Http\Controllers\TipoMovimientoController::class);
+Route::resource('movimientos', App\Http\Controllers\MovimientoController::class);

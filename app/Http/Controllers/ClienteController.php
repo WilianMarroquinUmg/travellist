@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\ClienteDataTable;
 use App\Http\Requests\CreateClienteRequest;
 use App\Http\Requests\UpdateClienteRequest;
 use App\Http\Controllers\AppBaseController;
@@ -22,13 +23,11 @@ class ClienteController extends AppBaseController
     /**
      * Display a listing of the Cliente.
      */
-    public function index(Request $request)
+    public function index(ClienteDataTable $clienteDataTable)
     {
-        $clientes = $this->clienteRepository->paginate(10);
-
-        return view('clientes.index')
-            ->with('clientes', $clientes);
+    return $clienteDataTable->render('clientes.index');
     }
+
 
     /**
      * Show the form for creating a new Cliente.
