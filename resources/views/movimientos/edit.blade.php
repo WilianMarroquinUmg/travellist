@@ -6,7 +6,7 @@
             <div class="row mb-2">
                 <div class="col-sm-12">
                     <h1>
-                    Create Tipo Cuentas
+                        Edit Movimiento
                     </h1>
                 </div>
             </div>
@@ -19,19 +19,17 @@
 
         <div class="card">
 
-            {!! Form::open(['route' => 'tipoCuentas.store']) !!}
+            {!! Form::model($movimiento, ['route' => ['movimientos.update', $movimiento->id], 'method' => 'patch']) !!}
 
             <div class="card-body">
-
                 <div class="row">
-                    @include('tipo_cuentas.fields')
+                    @include('movimientos.fields')
                 </div>
-
             </div>
 
             <div class="card-footer">
                 {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                <a href="{{ route('tipo-cuentas.index') }}" class="btn btn-default"> Cancel </a>
+                <a href="{{ route('movimientos.index') }}" class="btn btn-default"> Cancel </a>
             </div>
 
             {!! Form::close() !!}

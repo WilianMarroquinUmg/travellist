@@ -6,7 +6,7 @@
             <div class="row mb-2">
                 <div class="col-sm-12">
                     <h1>
-                    Create Tipo Cuentas
+                    Create Cuentas
                     </h1>
                 </div>
             </div>
@@ -19,19 +19,19 @@
 
         <div class="card">
 
-            {!! Form::open(['route' => 'tipoCuentas.store']) !!}
+            {!! Form::open(['route' => 'cuentas.store']) !!}
 
             <div class="card-body">
 
                 <div class="row">
-                    @include('tipo_cuentas.fields')
+                    @include('cuentas.fields')
                 </div>
 
             </div>
 
             <div class="card-footer">
                 {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                <a href="{{ route('tipo-cuentas.index') }}" class="btn btn-default"> Cancel </a>
+                <a href="{{ route('cuentas.index') }}" class="btn btn-default"> Cancel </a>
             </div>
 
             {!! Form::close() !!}

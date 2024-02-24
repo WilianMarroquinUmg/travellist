@@ -6,12 +6,12 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>
-Tipo Cuenta Details
+Tipo Moneda Details
                     </h1>
                 </div>
                 <div class="col-sm-6">
                     <a class="btn btn-default float-right"
-                       href="{{ route('tipo-cuentas.index') }}">
+                       href="{{ route('tipoMonedas.index') }}">
                                                     Back
                                             </a>
                 </div>
@@ -23,7 +23,7 @@ Tipo Cuenta Details
         <div class="card">
             <div class="card-body">
                 <div class="row">
-                    @include('tipo_cuentas.show_fields')
+                    @include('tipo_monedas.show_fields')
                 </div>
             </div>
         </div>
