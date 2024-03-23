@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tipo_movimiento', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('Descripcion', 100);
             $table->timestamps();
             $table->dateTime('deleted_at')->nullable();

@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tipo_moneda', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('nombre', 100);
             $table->string('estado', 10);
             $table->string('simbolo', 10);

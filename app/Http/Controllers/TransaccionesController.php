@@ -36,7 +36,7 @@ class TransaccionesController extends Controller
         // Llamada al procedimiento almacenado con valores específicos
         try {
             $respuesta = \DB::statement('EXEC transaccion_deposito ?, ?, ?', [
-                (int)$request->monto,
+                (float)$request->monto,
                 $request->cuentaOrigen,
                 $request->cuentaDestino
             ]);
