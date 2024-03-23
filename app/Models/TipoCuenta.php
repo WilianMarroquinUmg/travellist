@@ -3,9 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class TipoCuenta extends Model
 {
+    USE SoftDeletes;
     public $table = 'tipo_cuenta';
 
     public $fillable = [

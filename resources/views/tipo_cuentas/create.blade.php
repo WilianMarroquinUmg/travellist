@@ -19,7 +19,7 @@
 
         <div class="card">
 
-            {!! Form::open(['route' => 'tipoCuentas.store']) !!}
+            {!! Form::open(['route' => 'tipo-cuentas.store']) !!}
 
             <div class="card-body">
 

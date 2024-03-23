@@ -48,7 +48,7 @@ class TipoCuentaController extends AppBaseController
 
         Flash::success('Tipo Cuenta saved successfully.');
 
-        return redirect(route('tipoCuentas.index'));
+        return redirect(route('tipo-cuentas.index'));
     }
 
     /**
@@ -61,7 +61,7 @@ class TipoCuentaController extends AppBaseController
         if (empty($tipoCuenta)) {
             Flash::error('Tipo Cuenta not found');
 
-            return redirect(route('tipoCuentas.index'));
+            return redirect(route('tipo-cuentas.index'));
         }
 
         return view('tipo_cuentas.show')->with('tipoCuenta', $tipoCuenta);
@@ -77,7 +77,7 @@ class TipoCuentaController extends AppBaseController
         if (empty($tipoCuenta)) {
             Flash::error('Tipo Cuenta not found');
 
-            return redirect(route('tipoCuentas.index'));
+            return redirect(route('tipo-cuentas.index'));
         }
 
         return view('tipo_cuentas.edit')->with('tipoCuenta', $tipoCuenta);
@@ -93,14 +93,14 @@ class TipoCuentaController extends AppBaseController
         if (empty($tipoCuenta)) {
             Flash::error('Tipo Cuenta not found');
 
-            return redirect(route('tipoCuentas.index'));
+            return redirect(route('tipo-cuentas.index'));
         }
 
         $tipoCuenta = $this->tipoCuentaRepository->update($request->all(), $id);
 
         Flash::success('Tipo Cuenta updated successfully.');
 
-        return redirect(route('tipoCuentas.index'));
+        return redirect(route('tipo-cuentas.index'));
     }
 
     /**
@@ -115,13 +115,13 @@ class TipoCuentaController extends AppBaseController
         if (empty($tipoCuenta)) {
             Flash::error('Tipo Cuenta not found');
 
-            return redirect(route('tipoCuentas.index'));
+            return redirect(route('tipo-cuentas.index'));
         }
 
         $this->tipoCuentaRepository->delete($id);
 
         Flash::success('Tipo Cuenta deleted successfully.');
 
-        return redirect(route('tipoCuentas.index'));
+        return redirect(route('tipo-cuentas.index'));
     }
 }

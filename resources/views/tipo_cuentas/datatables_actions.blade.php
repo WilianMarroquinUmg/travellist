@@ -1,4 +1,4 @@
-{!! Form::open(['route' => ['tipoCuentas.destroy', $id], 'method' => 'delete']) !!}
+{!! Form::open(['route' => ['tipo-cuentas.destroy', $id], 'method' => 'delete']) !!}
 <div class='btn-group'>
     <a href="{{ route('tipo-cuentas.show', $id) }}" class='btn btn-default btn-xs'>
         <i class="fa fa-eye"></i>
