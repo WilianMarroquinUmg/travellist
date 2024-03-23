@@ -19,7 +19,7 @@
 
         <div class="card">
 
-            {!! Form::model($tipoMoneda, ['route' => ['tipoMonedas.update', $tipoMoneda->id], 'method' => 'patch']) !!}
+            {!! Form::model($tipoMoneda, ['route' => ['tipo-monedas.update', $tipoMoneda->id], 'method' => 'patch']) !!}
 
             <div class="card-body">
                 <div class="row">

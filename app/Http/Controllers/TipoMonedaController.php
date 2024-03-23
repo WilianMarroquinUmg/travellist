@@ -48,7 +48,7 @@ class TipoMonedaController extends AppBaseController
 
         Flash::success('Tipo Moneda saved successfully.');
 
-        return redirect(route('tipoMonedas.index'));
+        return redirect(route('tipo-monedas.index'));
     }
 
     /**
@@ -77,7 +77,7 @@ class TipoMonedaController extends AppBaseController
         if (empty($tipoMoneda)) {
             Flash::error('Tipo Moneda not found');
 
-            return redirect(route('tipoMonedas.index'));
+            return redirect(route('tipo-monedas.index'));
         }
 
         return view('tipo_monedas.edit')->with('tipoMoneda', $tipoMoneda);
@@ -93,7 +93,7 @@ class TipoMonedaController extends AppBaseController
         if (empty($tipoMoneda)) {
             Flash::error('Tipo Moneda not found');
 
-            return redirect(route('tipoMonedas.index'));
+            return redirect(route('tipo-monedas.index'));
         }
 
         $tipoMoneda = $this->tipoMonedaRepository->update($request->all(), $id);
@@ -115,13 +115,13 @@ class TipoMonedaController extends AppBaseController
         if (empty($tipoMoneda)) {
             Flash::error('Tipo Moneda not found');
 
-            return redirect(route('tipoMonedas.index'));
+            return redirect(route('tipo-monedas.index'));
         }
 
         $this->tipoMonedaRepository->delete($id);
 
         Flash::success('Tipo Moneda deleted successfully.');
 
-        return redirect(route('tipoMonedas.index'));
+        return redirect(route('tipo-monedas.index'));
     }
 }

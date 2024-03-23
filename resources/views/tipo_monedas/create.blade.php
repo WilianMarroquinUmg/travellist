@@ -19,7 +19,7 @@
 
         <div class="card">
 
-            {!! Form::open(['route' => 'tipoMonedas.store']) !!}
+            {!! Form::open(['route' => 'tipo-monedas.store']) !!}
 
             <div class="card-body">
 
@@ -31,7 +31,7 @@
 
             <div class="card-footer">
                 {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                <a href="{{ route('tipoMonedas.index') }}" class="btn btn-default"> Cancel </a>
+                <a href="{{ route('tipo-monedas.index') }}" class="btn btn-default"> Cancel </a>
             </div>
 
             {!! Form::close() !!}
